@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:layout_marginBottom="36dp"
-        android:layout_above="@+id/buttonHomeViewDetails"
+        android:layout_above="@+id/buttonHomeImputMarks"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="markulate_screen"/>
@@ -34,7 +34,7 @@
         android:text="@string/charts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonHomeViewDetails"
+        android:layout_below="@+id/buttonHomeImputMarks"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"

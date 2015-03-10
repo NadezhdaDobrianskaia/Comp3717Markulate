@@ -11,7 +11,13 @@
     <string name="inputMarks">Imput Marks</string>
     <string name="markulate">MARCULATE</string>
     <!-- end activity_main (Home) Screen -->
+
     <string name="title_activity_templates_screen">templatesScreen</string>
-    <string name="hello_world">Hello world!</string>
+    <!-- activity_templates_screen -->
+    <string name="button_add_course">Add</string>
+    <string name="button_delete_course">Delete</string>
+    <string name="button_import_course">Import</string>
+    <string name="button_export_course">Export</string>
+    <!-- end activity_templates_screen -->
 
 </resources>
