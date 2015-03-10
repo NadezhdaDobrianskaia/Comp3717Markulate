@@ -5,13 +5,23 @@ import java.io.Serializable;
 
 public class Item implements Serializable {
 
-    String itemName = "";
+    private String itemName = "";
+    private String category = "";
     private double weight;
 
     //constructor
-    public Item(String itemName, double weight){
+    public Item(String itemName, String category, double weight){
         this.itemName = itemName;
+        this.category = category;
         this.weight = weight;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getItemName() {
