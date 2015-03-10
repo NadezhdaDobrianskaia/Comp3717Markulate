@@ -4,12 +4,14 @@
     <string name="app_name">Marculator</string>
     <string name="action_settings">W?????????</string>
 
-
-<!--activity_main (Home) Screen -->
+    <!-- activity_main (Home) Screen -->
     <string name="markulator">Markulator</string>
     <string name="templates">Templates</string>
     <string name="charts">Summary</string>
     <string name="inputMarks">Imput Marks</string>
     <string name="markulate">MARCULATE</string>
-<!--end activity_main (Home) Screen -->
+    <!-- end activity_main (Home) Screen -->
+    <string name="title_activity_templates_screen">templatesScreen</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
