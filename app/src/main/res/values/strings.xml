@@ -21,6 +21,18 @@
     <!-- end activity_templates_screen -->
 
     <string name="title_activity_course_details_screen">courseDetailsScreen</string>
-    <string name="hello_world">Hello world!</string>
+    <!-- activity_course_details_screen -->
+    <string name="course_name_label">Course: </string>
+    <string name="course_name">Enter Course Name</string>
+    <string name="category_label">Category: </string>
+
+    <string name="item_name_label">Item Name: </string>
+    <string name="item_name">Enter the name of the Item </string>
+    <string name="category_weight_label">% items is worth: </string>
+    <string name="category_weight">Enter the % the item is worth </string>
+    <string name="btn_add_new_item">New Item</string>
+    <string name="btn_save">Save Course Details</string>
+    <string name="btn_cancel">Cancel</string>
+    <!-- end activity_course_details_screen -->
 
 </resources>
