@@ -20,6 +20,10 @@
             android:name=".templatesScreen"
             android:label="@string/title_activity_templates_screen" >
         </activity>
+        <activity
+            android:name=".courseDetailsScreen"
+            android:label="@string/title_activity_course_details_screen" >
+        </activity>
     </application>
 
 </manifest>

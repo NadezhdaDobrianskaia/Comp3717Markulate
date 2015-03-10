@@ -20,4 +20,7 @@
     <string name="button_export_course">Export</string>
     <!-- end activity_templates_screen -->
 
+    <string name="title_activity_course_details_screen">courseDetailsScreen</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
