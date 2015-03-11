@@ -30,7 +30,8 @@
     <string name="item_name">Name the item </string>
     <string name="category_weight_label">% weight of final mark: </string>
     <string name="category_weight">Enter % weight </string>
-    <string name="btn_add_new_item">Add Course Item</string>
+    <string name="btn_new_item">New Course Item</string>
+    <string name="btn_add_item">Add Item</string>
     <string name="btn_save">Save Course Details</string>
     <string name="btn_cancel">Cancel</string>
     <!-- end activity_course_details_screen -->

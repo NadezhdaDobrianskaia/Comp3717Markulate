@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import java.util.ArrayList;
 
 
 public class courseDetailsScreen extends ActionBarActivity {
@@ -20,6 +20,8 @@ public class courseDetailsScreen extends ActionBarActivity {
     EditText courseName, itemName, weight;
     Course myCourse;
     Spinner mySpinner;
+    Item myItem;
+    ArrayList<Item> items = new ArrayList<Item>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +42,21 @@ public class courseDetailsScreen extends ActionBarActivity {
 
     }
 
-    public void addNewItem(View v){
-        categoryLabel.setVisibility(View.VISIBLE);
-        itemNameLabel.setVisibility(View.VISIBLE);
-        weightLabel.setVisibility(View.VISIBLE);
-        mySpinner.setVisibility(View.VISIBLE);
-        itemName.setVisibility(View.VISIBLE);
-        weight.setVisibility(View.VISIBLE);
+
+    public void newItem(View v){
+        setItemVisibilityOn();
+        myItem = new Item(itemName.getText().toString(), 0);
+
+    }
+    public void addItem(View v){
+        myItem.setItemName(itemName.getText().toString());
+        myItem.setWeight(Double.parseDouble(weight.getText().toString()));
+        if(items.add(myItem)) {
+            for(int i=0; i<items.size(); i++)
+                Toast.makeText(getBaseContext(), items.get(i).getItemName(), Toast.LENGTH_SHORT).show();
+        }
+
+        setItemVisibilityOff();
     }
 
     public void detailsAdded(View v){
@@ -81,6 +91,22 @@ public class courseDetailsScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void setItemVisibilityOn(){
+        categoryLabel.setVisibility(View.VISIBLE);
+        itemNameLabel.setVisibility(View.VISIBLE);
+        weightLabel.setVisibility(View.VISIBLE);
+        mySpinner.setVisibility(View.VISIBLE);
+        itemName.setVisibility(View.VISIBLE);
+        weight.setVisibility(View.VISIBLE);
+    }
+    private void setItemVisibilityOff(){
+        categoryLabel.setVisibility(View.GONE);
+        itemNameLabel.setVisibility(View.GONE);
+        weightLabel.setVisibility(View.GONE);
+        mySpinner.setVisibility(View.GONE);
+        itemName.setVisibility(View.GONE);
+        weight.setVisibility(View.GONE);
+    }
     public void mapToIds(){
         courseName = (EditText)findViewById(R.id.course_name);
         categoryLabel = (TextView)findViewById(R.id.category_label);
@@ -89,14 +115,6 @@ public class courseDetailsScreen extends ActionBarActivity {
         mySpinner = (Spinner)findViewById(R.id.category);
         itemName = (EditText)findViewById(R.id.item_name);
         weight = (EditText)findViewById(R.id.category_weight);
-
-
-
-        categoryLabel.setVisibility(View.GONE);
-        itemNameLabel.setVisibility(View.GONE);
-        weightLabel.setVisibility(View.GONE);
-        mySpinner.setVisibility(View.GONE);
-        itemName.setVisibility(View.GONE);
-        weight.setVisibility(View.GONE);
+        setItemVisibilityOff();
     }
 }

@@ -15,6 +15,11 @@ public class Item implements Serializable {
         this.category = category;
         this.weight = weight;
     }
+    public Item(String itemName, double weight){
+        this.itemName = itemName;
+        this.category = null;
+        this.weight = weight;
+    }
 
     public String getCategory() {
         return category;

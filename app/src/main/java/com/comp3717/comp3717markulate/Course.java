@@ -63,4 +63,8 @@ public class Course implements Serializable {
     public void setItems(ArrayList items) {
         Items = items;
     }
+
+    public void addItems(Item i){
+        Items.add(i);
+    }
 }
