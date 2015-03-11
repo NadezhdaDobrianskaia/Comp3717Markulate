@@ -27,10 +27,10 @@
     <string name="category_label">Category: </string>
 
     <string name="item_name_label">Item Name: </string>
-    <string name="item_name">Enter the name of the Item </string>
-    <string name="category_weight_label">% items is worth: </string>
-    <string name="category_weight">Enter the % the item is worth </string>
-    <string name="btn_add_new_item">New Item</string>
+    <string name="item_name">Name the item </string>
+    <string name="category_weight_label">% weight of final mark: </string>
+    <string name="category_weight">Enter % weight </string>
+    <string name="btn_add_new_item">Add Course Item</string>
     <string name="btn_save">Save Course Details</string>
     <string name="btn_cancel">Cancel</string>
     <!-- end activity_course_details_screen -->
