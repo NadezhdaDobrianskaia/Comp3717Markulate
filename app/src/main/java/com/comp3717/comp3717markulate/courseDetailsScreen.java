@@ -7,29 +7,52 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 
 public class courseDetailsScreen extends ActionBarActivity {
 
-    EditText courseName;
+    TextView itemNameLabel, weightLabel, categoryLabel;
+    EditText courseName, itemName, weight;
     Course myCourse;
+    Spinner mySpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_details_screen);
+        mapToIds();     //method to map all ids to the view types
         Intent i = getIntent();
         myCourse = (Course)i.getSerializableExtra("myCourse");
-        courseName = (EditText)findViewById(R.id.course_name);
+        setCourse();
+    }
+
+    protected void setCourse(){
         if(myCourse.getCourseName() != null)
             courseName.setText(myCourse.getCourseName());
+        if(myCourse.getItems() != null){
+            Toast.makeText(getBaseContext(), "I should get the list of items", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void addNewItem(View v){
+        categoryLabel.setVisibility(View.VISIBLE);
+        itemNameLabel.setVisibility(View.VISIBLE);
+        weightLabel.setVisibility(View.VISIBLE);
+        mySpinner.setVisibility(View.VISIBLE);
+        itemName.setVisibility(View.VISIBLE);
+        weight.setVisibility(View.VISIBLE);
     }
 
     public void detailsAdded(View v){
         Intent i = new Intent();
         myCourse.setCourseName(courseName.getText().toString());
-        Toast.makeText(getBaseContext(), myCourse.getCourseName(), Toast.LENGTH_SHORT).show();
+
         i.putExtra("myCourseUpdated",myCourse);
         setResult(RESULT_OK, i);
         finish();
@@ -56,5 +79,24 @@ public class courseDetailsScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void mapToIds(){
+        courseName = (EditText)findViewById(R.id.course_name);
+        categoryLabel = (TextView)findViewById(R.id.category_label);
+        itemNameLabel = (TextView)findViewById(R.id.item_name_label);
+        weightLabel =(TextView)findViewById(R.id.category_weight_label);
+        mySpinner = (Spinner)findViewById(R.id.category);
+        itemName = (EditText)findViewById(R.id.item_name);
+        weight = (EditText)findViewById(R.id.category_weight);
+
+
+
+        categoryLabel.setVisibility(View.GONE);
+        itemNameLabel.setVisibility(View.GONE);
+        weightLabel.setVisibility(View.GONE);
+        mySpinner.setVisibility(View.GONE);
+        itemName.setVisibility(View.GONE);
+        weight.setVisibility(View.GONE);
     }
 }

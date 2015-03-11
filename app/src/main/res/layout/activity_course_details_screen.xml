@@ -15,7 +15,8 @@
 
         <TableRow
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            >
 
             <TextView
                 android:id="@+id/course_name_label"
@@ -31,7 +32,7 @@
                 android:layout_width = "match_parent"
                 android:layout_height="wrap_content"
 
-                />
+                android:textSize="16dp" />
         </TableRow>
 
         <TableRow>
@@ -40,7 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:layout_weight = "1"/>
+                android:layout_weight = "1"
+                android:onClick="addNewItem"/>
 
         </TableRow>
 
@@ -57,7 +59,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
+                android:id="@+id/category"
                 android:layout_column="1"
                 android:layout_marginRight="15dp"
             />
@@ -83,7 +85,7 @@
                 android:layout_width = "match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                />
+                android:textSize="12dp" />
         </TableRow>
 
         <TableRow
@@ -104,7 +106,7 @@
                 android:layout_width = "match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                />
+                android:textSize="12dp" />
 
         </TableRow>
 

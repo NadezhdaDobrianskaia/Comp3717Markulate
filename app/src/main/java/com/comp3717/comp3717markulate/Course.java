@@ -8,12 +8,13 @@ public class Course implements Serializable {
     private String courseName = "";
     private String category = "";
     private Button editButton = null;
-    private ArrayList Items;
+    private ArrayList Items = null;
 
     //constructor called when add button is pressed without new Button
     public Course(String courseName) {
         this.courseName = courseName;
         this.category = null;
+        this.Items = null;
 
     }
     //constructor without the new button
@@ -27,7 +28,6 @@ public class Course implements Serializable {
     public Course(String courseName, String category, Button editButton) {
         this.courseName = courseName;
         this.category = category;
-
         this.editButton = editButton;
     }
 
@@ -56,4 +56,11 @@ public class Course implements Serializable {
         this.category = category;
     }
 
+    public ArrayList getItems() {
+        return Items;
+    }
+
+    public void setItems(ArrayList items) {
+        Items = items;
+    }
 }
