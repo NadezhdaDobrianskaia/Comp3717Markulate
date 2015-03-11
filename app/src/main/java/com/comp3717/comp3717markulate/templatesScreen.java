@@ -44,11 +44,24 @@ public class templatesScreen extends ActionBarActivity {
     public void add_course_details(View view){
         Toast.makeText(getBaseContext(), "Add is Called", Toast.LENGTH_SHORT).show();
         Intent courseDetails = new Intent(this,courseDetailsScreen.class);
-        myCourse = new Course(null);
+        myCourse = new Course("Big");
+        Toast.makeText(getBaseContext(), myCourse.getCourseName(), Toast.LENGTH_SHORT).show();
         courseDetails.putExtra("myCourse",myCourse);
         startActivityForResult(courseDetails, 1);
 
     }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode == RESULT_OK){
+            if(requestCode == 1){
+                myCourse = (Course)data.getSerializableExtra("myCourseUpdated");
+                Toast.makeText(getBaseContext(), myCourse.getCourseName(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+
 
 
 

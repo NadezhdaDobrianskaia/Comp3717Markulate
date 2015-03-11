@@ -1,17 +1,38 @@
 package com.comp3717.comp3717markulate;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class courseDetailsScreen extends ActionBarActivity {
+
+    EditText courseName;
+    Course myCourse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_details_screen);
+        Intent i = getIntent();
+        myCourse = (Course)i.getSerializableExtra("myCourse");
+        courseName = (EditText)findViewById(R.id.course_name);
+        if(myCourse.getCourseName() != null)
+            courseName.setText(myCourse.getCourseName());
+    }
+
+    public void detailsAdded(View v){
+        Intent i = new Intent();
+        myCourse.setCourseName(courseName.getText().toString());
+        Toast.makeText(getBaseContext(), myCourse.getCourseName(), Toast.LENGTH_SHORT).show();
+        i.putExtra("myCourseUpdated",myCourse);
+        setResult(RESULT_OK, i);
+        finish();
     }
 
 
